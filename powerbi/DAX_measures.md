@@ -134,8 +134,13 @@ RETURN
 
 ---
 
-### Colonne calculée recommandée (si pas déjà dans le CSV)
+### Table de dates (optionnelle — pour l'analyse temporelle)
 Le CSV contient déjà `AgeBand`, `TenureBand`, `SalaryBand`. Si tu veux une table de dates :
+
+> ⚠️ **À créer via _Modélisation → Nouvelle table_ (PAS « Nouvelle mesure »).**
+> `ADDCOLUMNS(CALENDAR(...))` renvoie une **table** ; une mesure n'accepte qu'une valeur
+> scalaire (sinon erreur « Plusieurs colonnes ne peuvent pas être converties en une valeur scalaire »).
+> Cette table est **facultative** : utile seulement pour analyser recrutements/départs dans le temps.
 
 ```DAX
 Calendrier =
