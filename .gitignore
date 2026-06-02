@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Power BI
+*.pbix.tmp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Garder les données (petit dataset public) :
+# (rien d'ignoré dans data/)
