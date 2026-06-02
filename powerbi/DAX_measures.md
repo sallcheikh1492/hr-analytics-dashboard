@@ -122,9 +122,14 @@ COUNTROWS (
 ## 8. Titres dynamiques (optionnel)
 
 ```DAX
+-- Version autonome (ne référence aucune autre mesure -> évite les erreurs de nom/apostrophe)
 Titre Attrition =
-"Taux d'attrition : " & FORMAT ( [Taux d'Attrition %], "0.0%" )
-    & "  |  " & [Départs] & " départs sur " & [Effectif Total] & " employés"
+VAR Departs = CALCULATE ( COUNTROWS ( hr_clean ), hr_clean[AttritionFlag] = 1 )
+VAR Effectif = COUNTROWS ( hr_clean )
+VAR Taux = DIVIDE ( Departs, Effectif )
+RETURN
+    "Taux d'attrition : " & FORMAT ( Taux, "0.0%" )
+        & "  |  " & Departs & " départs sur " & Effectif & " employés"
 ```
 
 ---
