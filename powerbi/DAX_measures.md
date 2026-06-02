@@ -102,18 +102,19 @@ VAR TauxGlobal =
 RETURN DIVIDE ( TauxSegment, TauxGlobal )   -- > 1 = segment plus risqué que la moyenne
 
 -- Nb d'employés ACTIFS cumulant >= 3 facteurs de risque
-Employés à Risque (actifs) =
-CALCULATE (
-    COUNTROWS ( hr_clean ),
-    hr_clean[AttritionFlag] = 0,
+-- Nom sans parenthèses + un seul FILTER (plus robuste qu'un CALCULATE multi-filtres)
+Employés à Risque actifs =
+COUNTROWS (
     FILTER (
         hr_clean,
-        ( IF ( hr_clean[Department] = "Production", 1, 0 )
-        + IF ( hr_clean[TenureYears] <= 2, 1, 0 )
-        + IF ( hr_clean[EmpSatisfaction] <= 3, 1, 0 )
-        + IF ( hr_clean[SpecialProjectsCount] = 0, 1, 0 )
-        + IF ( hr_clean[RecruitmentSource] IN { "Google Search", "Diversity Job Fair" }, 1, 0 )
-        ) >= 3
+        hr_clean[AttritionFlag] = 0
+            && (
+                IF ( hr_clean[Department] = "Production", 1, 0 )
+                + IF ( hr_clean[TenureYears] <= 2, 1, 0 )
+                + IF ( hr_clean[EmpSatisfaction] <= 3, 1, 0 )
+                + IF ( hr_clean[SpecialProjectsCount] = 0, 1, 0 )
+                + IF ( hr_clean[RecruitmentSource] IN { "Google Search", "Diversity Job Fair" }, 1, 0 )
+            ) >= 3
     )
 )
 ```

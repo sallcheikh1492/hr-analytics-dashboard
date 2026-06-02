@@ -62,7 +62,7 @@ Insère 5 visuels **Carte** alignés en haut :
    - Axe X : `SpecialProjectsCount` · Valeur : `Taux d'Attrition %`
 5. **Satisfaction par département** — *Histogramme groupé*
    - Axe X : `Department` · Valeurs : `Satisfaction Moyenne`, `Engagement Moyen`
-6. **Carte "Employés à Risque (actifs)"** — mesure `Employés à Risque (actifs)`
+6. **Carte "Employés à Risque actifs"** — mesure `Employés à Risque actifs`
 
 ---
 
