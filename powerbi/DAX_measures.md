@@ -90,10 +90,16 @@ CALCULATE ( [Salaire Annuel Moyen], hr_clean[AttritionFlag] = 1 )
     - CALCULATE ( [Salaire Annuel Moyen], hr_clean[AttritionFlag] = 0 )
 
 -- Attrition du segment vs attrition globale (pour repérer les segments à risque)
+-- Version autonome : ne dépend d'aucune autre mesure (évite les erreurs de nom/apostrophe)
 Indice de Risque Attrition =
-VAR Global =
-    CALCULATE ( [Taux d'Attrition %], ALL ( hr_clean ) )
-RETURN DIVIDE ( [Taux d'Attrition %], Global )   -- > 1 = segment plus risqué que la moyenne
+VAR TauxSegment =
+    DIVIDE ( SUM ( hr_clean[AttritionFlag] ), COUNTROWS ( hr_clean ) )
+VAR TauxGlobal =
+    CALCULATE (
+        DIVIDE ( SUM ( hr_clean[AttritionFlag] ), COUNTROWS ( hr_clean ) ),
+        ALL ( hr_clean )
+    )
+RETURN DIVIDE ( TauxSegment, TauxGlobal )   -- > 1 = segment plus risqué que la moyenne
 
 -- Nb d'employés ACTIFS cumulant >= 3 facteurs de risque
 Employés à Risque (actifs) =
