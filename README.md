@@ -10,6 +10,9 @@ proposer des **leviers de rétention** actionnables.
 ![PowerBI](https://img.shields.io/badge/Power%20BI-DAX-yellow)
 ![Status](https://img.shields.io/badge/status-complete-success)
 
+> 🌐 **Dashboard web interactif (live) : https://kheuch1492.github.io/hr-analytics-dashboard/**
+> KPI, filtres (département / sexe / âge / source) et graphiques Plotly — aucune installation requise.
+
 ---
 
 ## 🎯 Problématique
@@ -64,6 +67,8 @@ BI2/
 │   ├── 02_load.sql                # chargement \copy
 │   ├── 03_kpis.sql                # requêtes KPI
 │   └── 04_analysis.sql            # requêtes d'analyse (turnover, facteurs, risque)
+├── docs/
+│   └── index.html                 # dashboard web interactif (GitHub Pages)
 ├── powerbi/
 │   ├── DAX_measures.md            # toutes les mesures DAX
 │   └── PowerBI_build_guide.md     # guide de construction pas-à-pas
@@ -134,7 +139,13 @@ python scripts/build_notebook.py
 
 # 4. Générer le rapport PDF
 python scripts/build_report_pdf.py
+
+# 5. (Re)générer le dashboard web (docs/index.html)
+python scripts/build_web.py
 ```
+
+> Le dashboard web est **autonome** : ouvre `docs/index.html` dans un navigateur (double-clic),
+> ou publie-le gratuitement via **GitHub Pages** (Settings → Pages → Source : `main` / dossier `/docs`).
 
 **SQL (PostgreSQL)**
 ```bash
