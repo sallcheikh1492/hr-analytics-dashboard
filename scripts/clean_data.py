@@ -339,7 +339,7 @@ def export(df: pd.DataFrame, kpis: dict) -> None:
         "Salary", "MonthlyIncome", "SalaryBand",
         "DateofHire", "DateofTermination", "TenureYears", "TenureBand",
         "EmploymentStatus", "TermReason", "Attrition", "AttritionFlag", "IsVoluntary",
-        "EmpSatisfaction", "SatisfactionLabel", "EngagementSurvey",
+        "EmpSatisfaction", "EngagementSurvey",
         "PerformanceScore", "PerfScoreID", "HighPerformer", "LowPerformer",
         "SpecialProjectsCount", "DaysLateLast30", "Absences", "AbsenteeismRate",
         "LastPerformanceReview_Date",
