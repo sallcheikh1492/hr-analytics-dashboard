@@ -70,8 +70,11 @@ BI2/
 ├── docs/
 │   └── index.html                 # dashboard web interactif (GitHub Pages)
 ├── powerbi/
+│   ├── projet2.pbix               # dashboard Power BI (3 pages)
 │   ├── DAX_measures.md            # toutes les mesures DAX
-│   └── PowerBI_build_guide.md     # guide de construction pas-à-pas
+│   ├── PowerBI_build_guide.md     # guide de construction pas-à-pas
+│   └── assets/
+│       └── landing_background.png # fond de la page d'accueil
 ├── reports/
 │   ├── figures/                   # 11 graphiques PNG
 │   ├── HR_Analytics_Report.md     # rapport synthétique
@@ -155,9 +158,11 @@ psql -d hr -f sql/03_kpis.sql
 psql -d hr -f sql/04_analysis.sql
 ```
 
-**Power BI** — importer `data/processed/hr_clean.csv`, créer les mesures de
-[`powerbi/DAX_measures.md`](powerbi/DAX_measures.md) et suivre
-[`powerbi/PowerBI_build_guide.md`](powerbi/PowerBI_build_guide.md).
+**Power BI** — ouvrir directement [`powerbi/projet2.pbix`](powerbi/projet2.pbix) dans Power BI Desktop.
+Dashboard de **3 pages** (Vue d'ensemble · Facteurs de départ · Absentéisme & Performance) avec
+KPI, filtres synchronisés et page d'accueil. Pour reconstruire de zéro : importer
+`data/processed/hr_clean.csv`, créer les mesures de [`powerbi/DAX_measures.md`](powerbi/DAX_measures.md)
+et suivre [`powerbi/PowerBI_build_guide.md`](powerbi/PowerBI_build_guide.md).
 
 ---
 
