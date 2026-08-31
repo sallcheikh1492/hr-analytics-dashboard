@@ -89,7 +89,7 @@ HTML = """<!DOCTYPE html>
 <footer>
   Source : <a href="https://www.kaggle.com/datasets/rhuebner/human-resources-data-set">Kaggle — HR Dataset (rhuebner)</a>.
   Taux d'attrition cumulé sur l'historique (non annualisé). Construit avec Plotly.js.
-  Code &amp; rapport : <a href="https://github.com/kheuch1492/hr-analytics-dashboard">github.com/kheuch1492/hr-analytics-dashboard</a>.
+  Code &amp; rapport : <a href="https://github.com/sallcheikh1492/hr-analytics-dashboard">github.com/sallcheikh1492/hr-analytics-dashboard</a>.
 </footer>
 
 <script>
