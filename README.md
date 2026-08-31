@@ -10,7 +10,7 @@ proposer des **leviers de rétention** actionnables.
 ![PowerBI](https://img.shields.io/badge/Power%20BI-DAX-yellow)
 ![Status](https://img.shields.io/badge/status-complete-success)
 
-> 🌐 **Dashboard web interactif (live) : https://kheuch1492.github.io/hr-analytics-dashboard/**
+> 🌐 **Dashboard web interactif (live) : https://sallcheikh1492.github.io/hr-analytics-dashboard/**
 > KPI, filtres (département / sexe / âge / source) et graphiques Plotly — aucune installation requise.
 
 ---
